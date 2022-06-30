@@ -1,14 +1,10 @@
 ## Integrating with GitHub Actions – CICD pipeline to Deploy a Web App to Amazon EC2
 
-Many Organizations adopt [DevOps Practices](https://aws.amazon.com/devops/what-is-devops/) to innovate faster by automating and streamlining the software development and infrastructure management processes. Beyond cultural adoption, DevOps also suggests following certain best practices and Continuous Integration and Continuous Delivery (CI/CD) is among the important ones to start with. CI/CD practice reduces the time it takes to release new software updates by automating deployment activities. Many tools are available to implement this practice. Although AWS has a set of native tools to help achieve your CI/CD goals, it also offers flexibility and extensibility for integrating with numerous third party tools.
+GitHub Actions is a feature on GitHub’s popular development platform that helps you automate your software development workflows in the same place that you store code and collaborate on pull requests and issues. You can write individual tasks called actions, and then combine them to create a custom workflow. Workflows are custom automated processes that you can set up in your repository to build, test, package, release, or deploy any code project on GitHub.
 
 In this post, you will use [GitHub Actions](https://help.github.com/en/actions) to create a CI/CD workflow and [AWS CodeDeploy](https://aws.amazon.com/codedeploy/) to deploy a sample Java SpringBoot application to Amazon Elastic Compute Cloud ([Amazon EC2](https://docs.aws.amazon.com/ec2/index.html?nc2=h_ql_doc_ec2#amazon-ec2)) instances in an Autoscaling group.
 
-
-GitHub Actions is a feature on GitHub’s popular development platform that helps you automate your software development workflows in the same place that you store code and collaborate on pull requests and issues. You can write individual tasks called actions, and then combine them to create a custom workflow. Workflows are custom automated processes that you can set up in your repository to build, test, package, release, or deploy any code project on GitHub.
-
 AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances, serverless AWS Lambda functions, or Amazon Elastic Container Service (Amazon ECS) services.
-
 
 ## Solution Overview
 
@@ -25,17 +21,10 @@ The solution utilizes following services:
 The following diagram illustrates the architecture for the solution:
 ![Alt Text](aws-coodedeplooy-github-action-deploymentV3.png?raw=true  "Title")
 
-## Prerequisites
-Before you begin, you need to complete the following prerequisites:
-    
-   * An AWS account with permissions to create the necessary resources.
-   * A [Git Client](https://git-scm.com/downloads) to clone the provided source code.
-   * A [GitHub account](https://github.com/) with permissions to configure GitHub repositories, create workflows, and configure GitHub secrets.
-
 ## Walkthrough
 The following steps provide a high-level overview of the walkthrough:
 
-  1.	Clone the project from the AWS code samples repository.
+  1.	Clone the project from the code repository.
   2.	Deploy the AWS CloudFormation template to create the required services.
   3.	Update the source code.
   4.	Setup GitHub secrets.
@@ -45,9 +34,9 @@ The following steps provide a high-level overview of the walkthrough:
 
 ## Download the source code
 
-Clone this repository aws-codedeploy-github-actions-deployment 
+Clone this repository CICD-Pipeline-GitHubActionDeploy2AWS 
 
-    git clone https://github.com/aws-samples/aws-codedeploy-github-actions-deployment.git
+    git clone https://github.com/acamara19/CICD-Pipeline-GitHubActionDeploy2AWS.git
 
 Create an empty repository in your personal GitHub account.
 
@@ -55,7 +44,7 @@ Create an empty repository in your personal GitHub account.
     
 Copy the code. We need contents from the hidden .github folder for the GitHub actions to work.
 
-    cp -r aws-codedeploy-github-actions-deployment/. <new repository>
+    cp -r CICD-Pipeline-GitHubActionDeploy2AWS/. <new repository>
 
     e.g. GitActionsDeploytoAWS
 
@@ -105,7 +94,3 @@ To avoid incurring future changes, you should clean up the resources that you cr
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
-
-## License
-
-This library is licensed under the MIT-0 License. See the LICENSE file.
